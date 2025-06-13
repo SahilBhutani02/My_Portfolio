@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import { Loader } from "react-loaders";
 import Illustration from "../../assets/images/illustration.png";
-import emailjs from "@emailjs/browser";
 import Resume from "../../assets/Resume/Sahil_Bhutani.pdf";
-import { saveAs } from "file-saver";
 import { Button } from "reactstrap";
 
 const Home = () => {
@@ -19,8 +17,6 @@ const Home = () => {
 
     console.log("Resume download triggered");
   };
-
- 
 
   return (
     <>

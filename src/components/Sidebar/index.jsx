@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/images/Sahil.jpg"
 import {
-  faTwitter,
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";

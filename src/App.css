@@ -23,22 +23,10 @@
 
 body {
   font-family: 'Helventica Neue', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #0d1117;
+  color: #c9d1d9;
   line-height: 1.6;
-}
-
-/* For input and textarea fields */
-input,
-textarea {
-  font-family: 'Helventica Neue', sans-serif;
-}
-
-/* Layout styling */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  overflow-y: scroll;
 }
 
 /* Loader */

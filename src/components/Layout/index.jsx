@@ -4,7 +4,7 @@ import './index.css';
 
 const Layout = () => {
     return (
-        <div className='App'>
+        <div className='sidebar'>
             <Sidebar />
             
             <div className="page">

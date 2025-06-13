@@ -21,18 +21,18 @@ const Contact = () => {
     try {
       // Send email using EmailJS
       const result = await emailjs.sendForm(
-        "service_6f5884x", // Replace with your service ID
-        "template_qiixutq", // Replace with your template ID
+        "service_6f5884x", //  service ID
+        "template_qiixutq", //  template ID
         refForm.current,
-        "1oe2ZK9thKk6F7Mne" // Replace with your public key
+        "1oe2ZK9thKk6F7Mne" //  public key
       );
 
       console.log("SUCCESS!", result.status, result.text);
-      setMessage("✅ Message sent successfully! I will get back to you soon.");
-      refForm.current.reset(); // Clear the form
+      setMessage("Message sent successfully! I will get back to you soon.");
+      refForm.current.reset();
     } catch (error) {
       console.log("FAILED...", error);
-      setMessage("❌ Failed to send message. Please try again.");
+      setMessage("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
