@@ -36,7 +36,7 @@ const About = () => {
             field of work.
           </p>
         </div>
-        <div className="stage-cube-cont">
+        <div className="image-zone">
           <div className="cubespinner">
             <div className="face1">
               <FontAwesomeIcon icon={faHtml5} />

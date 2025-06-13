@@ -1,11 +1,10 @@
 .nav-bar {
   background: #181818;
-  width: 60px;
-  height: 100%;
+  width: 5vw;
+  height: 100vh;
   position: absolute;
   top: 0;
-  z-index: 3;
-  min-height: 500px;
+  z-index: 1000;
 }
 
 .nav-bar .logo {
@@ -108,4 +107,80 @@
 
 .nav-bar ul li a:hover svg {
   color: #ffd700;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .nav-bar {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .nav-bar .logo {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .nav-bar .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-bar nav {
+    position: static;
+    height: auto;
+    top: auto;
+    margin-top: 0;
+    width: auto;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-bar nav a {
+    font-size: 18px;
+    line-height: 1;
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-bar nav a:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+  }
+
+  .nav-bar nav a:hover svg {
+    opacity: 1;
+  }
+
+  .nav-bar nav a:hover::after {
+    opacity: 0;
+  }
+
+  .nav-bar nav a::after {
+    display: none;
+  }
+
+  .nav-bar ul {
+    position: static;
+    bottom: auto;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    width: auto;
+  }
+
+  .nav-bar ul li a {
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1;
+  }
 }

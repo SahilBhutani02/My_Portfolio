@@ -7,24 +7,32 @@ import { Button } from "reactstrap";
 
 const Home = () => {
   const downloadResume = () => {
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement("a");
-    link.href = Resume;
-    link.download = "Sahil_Bhutani.pdf"; 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      // Create a temporary anchor element to trigger download
+      const link = document.createElement("a");
+      link.href = Resume;
+      link.download = "Sahil_Bhutani_Resume.pdf"; 
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer'); 
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-    console.log("Resume download triggered");
+      console.log("Resume download triggered successfully");
+      
+    } catch (error) {
+      console.error("Error downloading resume:", error);
+    }
   };
 
   return (
     <>
-      <div className="home-page">
+      <div className="container home-page">
         <div className="text-zone">
           <p className="text">Hello, I'm</p>
           <h1 className="heading">SAHIL BHUTANI</h1>
-          <p className="text">Full Stack Developer </p>
+          <p className="text">Full Stack Developer</p>
           <p className="text">
             10 months of experience as Frontend Developer Intern
           </p>
@@ -32,15 +40,25 @@ const Home = () => {
             <Link to="/contact" className="flat-button">
               CONTACT ME
             </Link>
-            <Button className="resume" onClick={downloadResume}>
+            <Button 
+              className="resume" 
+              onClick={downloadResume}
+              aria-label="Download Sahil Bhutani's Resume"
+            >
               Download Resume
             </Button>
           </div>
         </div>
+        <div className="image-zone">
+          <img 
+            className="image" 
+            src={Illustration} 
+            alt="Professional illustration of Sahil Bhutani" 
+            loading="lazy"
+          />
+        </div>
       </div>
-      <div className="right-side">
-        <img className="right-logo" src={Illustration} alt="logo" />
-      </div>
+
       <Loader type="pacman" />
     </>
   );

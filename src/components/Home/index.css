@@ -1,5 +1,7 @@
+.home-page {
+  margin: 0;
+}
 
-/* Headline */
 .heading {
   font-family: 'Courier New', Courier, monospace;
   font-size: 56px;
@@ -7,21 +9,8 @@
   color: #ffd700;
   margin: 10px 0;
   line-height: 1.2;
-}
-
-/* Text blocks */
-.text-zone .text {
-  font-size: 20px;
-  font-weight: 300;
-  color: #f0f0f0;
-  margin: 8px 0;
-  line-height: 1.6;
-  max-width: 600px;
-}
-
-/* Button wrapper */
-.text-zone div {
-  margin-top: 20px;
+  /* Add text shadow for better visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .text {
@@ -31,26 +20,23 @@
   font-family: sans-serif;
   font-weight: 300;
   min-width: fit-content;
+  margin-bottom: 0.5rem;
 }
 
-
-.right-side {
-  width: 50%;
-  height: 100%;
-  top: 0;
-  position: absolute;
-  right: 0;
-  overflow: hidden;
-}
-
-.right-logo {
+.image {
   width: 80%;
   height: 80%;
-  margin-top: 10%;
   margin-left: 10%;
   object-fit: contain;
   animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
+
+.image:hover {
+  transform: scale(1.05);
+  animation-play-state: paused; 
+}
+
 /* Float animation */
 @keyframes float {
   0% {
@@ -67,7 +53,7 @@
 .btns {
   display: flex;
   gap: 1.2rem;
-  margin-top: 2rem;
+  margin-top: 30px; 
   flex-wrap: wrap;
   font-family: sans-serif;
 }
@@ -79,14 +65,21 @@
   border: 2px solid #ffd700;
   border-radius: 8px;
   font-size: 16px;
+  font-weight: 500; 
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px; 
 }
 
 .btns .flat-button:hover {
   background-color: #ffd700;
   color: #000000;
   border-color: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .btns .resume {
@@ -96,7 +89,56 @@
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
 }
 
+.btns .resume:hover {
+  background-color: #1ea454;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 206, 107, 0.3);
+}
 
+.btns .resume:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 42px;
+  }
+  
+  .text {
+    font-size: 16px;
+  }
+  
+  .btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btns .flat-button,
+  .btns .resume {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .image {
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 36px;
+  }
+  
+  .text {
+    font-size: 14px;
+  }
+}

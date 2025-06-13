@@ -1,82 +1,108 @@
 .page {
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  display: flex;
+  position: relative;
 }
 
 .sidebar {
   display: flex;
   min-height: 100vh;
+  width: 5vw; 
+  flex-shrink: 0; 
 }
 
 .container {
-  width: 100%;
+  flex: 1; 
+  height: 100vh;
+  overflow-y: auto;
   will-change: contents;
-  height: 90%;
-  min-height: 566px;
-  position: absolute;
-  top: 5%;
-  margin: 0 auto;
-  transform-style: preserve-3d;
-  animation: fadeIn 1s forwards;
-  animation-delay: 1s;
+  position: relative;
 }
 
-.home-page .text-zone{
+.text-zone {
   position: absolute;
-  left: 15%;
-  top: 45%;
-  transform: translateY(-50%);
-  width: 50%;
-  text-align: left;
-  vertical-align: middle;
-  display: table-cell;
-  max-height: 90%;
+  width: 45vw;
+  height: 100vh;
+  left: 5%;
+  top: 0;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  padding: 2rem; 
+  box-sizing: border-box;
 }
 
-
-.about-page .text-zone{
+.image-zone {
   position: absolute;
-  left: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 35%;
-  vertical-align: middle;
-  display: table-cell;
-  max-height: 90%;
+  width: 45vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.contact-page .text-zone {
-  position: absolute;
-  left: 30%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50%;
-  vertical-align: middle;
-  display: table-cell;
-  max-height: 90%;
-}
-
-.about-page h1,
-.contact-page h1 {
+h1 {
   font-size: 53px;
-  font-family: "Coolvertica";
+  font-family: "Coolvertica", sans-serif; 
   color: #ffd700;
   font-weight: 400;
   margin-top: 0;
   position: relative;
   margin-bottom: 40px;
-  left: 10px;
+  line-height: 1.2; 
 }
 
-.about-page p,
-.contact-page p {
+p {
   font-size: 15px;
   color: #fff;
   font-family: sans-serif;
   font-weight: 300;
   min-width: fit-content;
-  animation: pulse 1s;
+  line-height: 1.6; 
+  margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: 70px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .container {
+    flex-direction: column;
+    margin-top: 70px;
+    height:auto;
+  }
+  
+  .text-zone {
+    position: static;
+    width: 100%;
+    height: auto;
+    left: 0;
+    padding: 2rem 1rem;
+  }
+  
+  .image-zone {
+    position: static;
+    width: 100%;
+    height: 50vh;
+    right: 0;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+}
