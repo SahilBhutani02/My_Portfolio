@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import { Loader } from "react-loaders";
 import Illustration from "../../assets/images/illustration.png";
-import Resume from "../../assets/Resume/Sahil_Bhutani.pdf";
+import Resume from "../../assets/Resume/Sahil_Bhutani_Resume.pdf";
 import { Button } from "reactstrap";
 
 const Home = () => {
@@ -53,7 +53,7 @@ const Home = () => {
           <img 
             className="image" 
             src={Illustration} 
-            alt="Professional illustration of Sahil Bhutani" 
+            alt="illustration" 
             loading="lazy"
           />
         </div>
